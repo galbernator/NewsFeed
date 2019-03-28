@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ActivityList.xcodeproj">
+      location = "self:/Users/nick/Developer/betterup-interview-ios/NewsFeed.xcodeproj">
    </FileRef>
 </Workspace>

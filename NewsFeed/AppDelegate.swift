@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ActivityList
+//  NewsFeed
 //
 //  Created by Nick Donaldson on 3/28/19.
 //  Copyright © 2019 BetterUp. All rights reserved.

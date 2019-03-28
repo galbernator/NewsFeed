@@ -1,15 +1,15 @@
 //
-//  ActivityListTests.swift
-//  ActivityListTests
+//  NewsFeedTests.swift
+//  NewsFeed
 //
 //  Created by Nick Donaldson on 3/28/19.
 //  Copyright © 2019 BetterUp. All rights reserved.
 //
 
 import XCTest
-@testable import ActivityList
+@testable import NewsFeed
 
-class ActivityListTests: XCTestCase {
+class NewsFeedTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
