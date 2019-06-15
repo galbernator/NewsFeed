@@ -31,7 +31,7 @@ struct Article: Decodable {
     var heroImage: URL
     var link: URL
 
-    private enum DecodingError: Error {
+    enum DecodingError: Error, Equatable {
         case invalidCreatedAtDate
         case invalidHeroImageAddress
         case invalidLink
