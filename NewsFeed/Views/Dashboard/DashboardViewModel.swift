@@ -3,7 +3,7 @@
 //  NewsFeed
 //
 //  Created by Steve on 6/14/19.
-//  Copyright © 2019 BetterUp. All rights reserved.
+//  Copyright © 2019 Steve Galbraith. All rights reserved.
 //
 
 import Foundation
@@ -56,6 +56,7 @@ struct DashboardViewModel {
             Observable.just(articleData)
                 .map { json in
                     let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
                     let response = try decoder.decode(ArticlesResponse.self, from: json)
                     return response.articles
                 }

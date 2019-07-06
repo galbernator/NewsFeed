@@ -3,7 +3,7 @@
 //  NewsFeed
 //
 //  Created by Nick Donaldson on 3/28/19.
-//  Copyright © 2019 BetterUp. All rights reserved.
+//  Copyright © 2019 Steve Galbraith. All rights reserved.
 //
 
 import UIKit

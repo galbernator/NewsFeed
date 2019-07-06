@@ -2,8 +2,8 @@
 //  Article.swift
 //  NewsFeed
 //
-//  Created by Nick Donaldson on 3/28/19.
-//  Copyright © 2019 BetterUp. All rights reserved.
+//  Created by Steve on 6/14/19.
+//  Copyright © 2019 Steve Galbraith. All rights reserved.
 //
 
 import Foundation
@@ -17,10 +17,6 @@ struct ArticlesResponse: Decodable {
 }
 
 struct Article: Decodable {
-
-    private struct Constants {
-        static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-    }
 
     var id: Int
     var title: String
@@ -77,21 +73,18 @@ struct Article: Decodable {
         }
     }
 
+    // TODO: Remove this when networking is enabled and HeroImageConverter is removed since the default implementation from Decode can be used
     init(from decoder: Decoder) throws {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.dateFormat
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
-        let createdAtString = try container.decode(String.self, forKey: .createdAt)
 
-        guard let date = dateFormatter.date(from: createdAtString) else { throw DecodingError.invalidCreatedAtDate }
-
-        createdAt = date
+        createdAt = try container.decode(Date.self, forKey: .createdAt)
         source = try container.decode(String.self, forKey: .source)
         description = try container.decode(String.self, forKey: .description)
         favorite = try container.decode(Bool.self, forKey: .favorite)
+
         let heroImageString = try container.decode(String.self, forKey: .heroImage)
 
         guard let converter = HeroImageConverter(rawValue: heroImageString) else {
